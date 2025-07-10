@@ -3,189 +3,170 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Skyline Software Co. | Salesforce Consulting</title>
+  <title>Skyline Software Co. | Salesforce Experts</title>
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      scroll-snap-type: y mandatory;
-      overflow-y: scroll;
-      height: 100%;
       font-family: 'Segoe UI', sans-serif;
       background: #fdfdfd;
-      color: #333;
+      overflow-x: hidden;
     }
 
-    section {
-      height: 100vh;
-      scroll-snap-align: start;
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 100;
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    section:nth-child(odd) {
-      background-color: #ffffff;
-    }
-
-    section:nth-child(even) {
-      background-color: #f7f9fb;
-    }
-
-    h1, h2 {
-      font-size: 2.4rem;
-      margin-bottom: 1rem;
-      color: #0070f3;
-    }
-
-    p {
-      font-size: 1.1rem;
-      max-width: 680px;
-      color: #444;
-    }
-
-    .dots {
-      position: fixed;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      z-index: 10;
-    }
-
-    .dot {
-      width: 12px;
-      height: 12px;
-      background-color: #bbb;
-      border-radius: 50%;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-
-    .dot.active {
-      background-color: #0070f3;
-    }
-
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-    }
-
-    .logo {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 100;
+      justify-content: space-between;
+      padding: 10px 30px;
     }
 
     .logo img {
       height: 40px;
     }
 
+    /* Carousel Wrapper */
+    .carousel-wrapper {
+      margin-top: 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: max-content;
+    }
+
+    .slide {
+      flex: 0 0 100vw;
+      height: calc(100vh - 70px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+
+    .slide:nth-child(even) {
+      background: #f7f9fb;
+    }
+
+    h2 {
+      color: #0070f3;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 600px;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    /* Arrows */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #0070f3;
+      background: rgba(255,255,255,0.8);
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 6px;
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #111;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
     @media (max-width: 768px) {
-      h1, h2 {
-        font-size: 2rem;
+      h2 {
+        font-size: 1.6rem;
       }
 
-      .dot {
-        width: 10px;
-        height: 10px;
+      .arrow {
+        font-size: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo -->
-  <div class="logo">
-    <img src="logo.png" alt="Skyline Software Co." />
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Skyline Software Co." />
+    </div>
+    <div><strong>Salesforce Consulting Experts</strong></div>
+  </header>
+
+  <!-- Carousel -->
+  <div class="carousel-wrapper">
+    <button class="arrow left" onclick="moveSlide(-1)">‹</button>
+    <div class="carousel" id="carousel">
+      <div class="slide"><h2>Skyline Software Co.</h2><p>Enterprise-grade Salesforce Consulting — Implementation, Development, and Support from a nimble, experienced team.</p></div>
+      <div class="slide"><h2>Salesforce Implementation</h2><p>End-to-end setup for Sales Cloud, Service Cloud, Experience Cloud, and more — tailored to your workflows.</p></div>
+      <div class="slide"><h2>Custom Development</h2><p>Apex, Lightning Web Components, Flows, and scalable automation built for performance and compliance.</p></div>
+      <div class="slide"><h2>Experience Cloud Portals</h2><p>Build branded, self-service portals for customers, partners, and employees — fully integrated with Salesforce.</p></div>
+      <div class="slide"><h2>Integrations</h2><p>REST/SOAP APIs, middleware like MuleSoft or Zapier — connect Salesforce with your ecosystem.</p></div>
+      <div class="slide"><h2>Field Service Lightning</h2><p>Deploy mobile-first field technician solutions with scheduling, routing, and job tracking.</p></div>
+      <div class="slide"><h2>Salesforce CPQ</h2><p>Streamline your quote-to-cash cycle with smart configuration, pricing, and approvals.</p></div>
+      <div class="slide"><h2>Marketing Automation</h2><p>Automate campaigns with Pardot and Marketing Cloud, optimize lead journeys and engagement.</p></div>
+      <div class="slide"><h2>AI & Einstein</h2><p>Use AI to summarize notes, predict outcomes, and assist your teams with intelligent recommendations.</p></div>
+      <div class="slide"><h2>DevOps & CI/CD</h2><p>Use GitHub Actions and SFDX for version control, pipelines, and deployment automation.</p></div>
+      <div class="slide"><h2>Data Migration</h2><p>Move your legacy data to Salesforce with clean mapping, validation, and audit support.</p></div>
+      <div class="slide"><h2>Security & Compliance</h2><p>Ensure GDPR/HIPAA compliance, field-level security, 2FA, and audit-ready policies.</p></div>
+      <div class="slide"><h2>Ongoing Support</h2><p>Admin, enhancement, and architectural support packages tailored to your growth.</p></div>
+      <div class="slide"><h2>Contact Us</h2><p>📧 <strong>contact@skylinesoftware.co</strong><br>Let’s build something powerful together.</p></div>
+    </div>
+    <button class="arrow right" onclick="moveSlide(1)">›</button>
   </div>
 
-  <!-- Dot Navigation -->
-  <div class="dots" id="dotNav"></div>
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Skyline Software Co. | All rights reserved
+  </footer>
 
-  <!-- Carousel Sections -->
-  <section><h1>Skyline Software Co.</h1><p>Enterprise-grade Salesforce Consulting — Implementation, Development, and Support from an experienced, nimble team.</p></section>
-  <section><h2>Salesforce Implementation</h2><p>End-to-end setup for Sales Cloud, Service Cloud, Experience Cloud and more — tailored to your goals and users.</p></section>
-  <section><h2>Custom Development</h2><p>Lightning Web Components, Apex, Flows, Triggers — built to scale with performance and compliance in mind.</p></section>
-  <section><h2>Experience Cloud Portals</h2><p>Branded, self-service portals for customers, partners, and internal users with secure data access and workflows.</p></section>
-  <section><h2>Integrations</h2><p>REST/SOAP APIs, middleware, Kafka, MuleSoft, and external systems — seamlessly connected to Salesforce.</p></section>
-  <section><h2>Field Service Lightning</h2><p>Empower field technicians with FSL — optimized routing, mobile workflows, inventory and asset tracking.</p></section>
-  <section><h2>Salesforce CPQ</h2><p>Accelerate quote-to-cash with CPQ configurations, pricing automation, approval rules, and document generation.</p></section>
-  <section><h2>Marketing Automation</h2><p>Campaign management, email journeys, Pardot/Marketing Cloud configuration — aligned to your funnel.</p></section>
-  <section><h2>AI & Einstein</h2><p>Einstein GPT + OpenAI integrations — summarize notes, generate smart responses, prioritize leads, and more.</p></section>
-  <section><h2>DevOps & CI/CD</h2><p>Version control, pipeline automation, scratch orgs, metadata API and GitHub Actions for modern delivery teams.</p></section>
-  <section><h2>Data Migration</h2><p>Clean, validate, and import large datasets from legacy platforms, with full audit trails and zero downtime.</p></section>
-  <section><h2>Security & Compliance</h2><p>Implement field-level security, 2FA, encryption, audit trails, and GDPR/HIPAA/SOC2 best practices.</p></section>
-  <section><h2>Ongoing Support</h2><p>Flexible support options — admin help, bug fixes, enhancements, team training, and on-demand scaling.</p></section>
-  <section><h2>Contact Us</h2><p>📧 <strong>admin@skylinesoftware.co</strong><br>Let’s talk about how we can support your Salesforce journey.</p></section>
-
-  <footer>&copy; 2025 Skyline Software Co. | Salesforce Consulting Experts</footer>
-
+  <!-- Script -->
   <script>
-    const sections = document.querySelectorAll('section');
-    const dotNav = document.getElementById('dotNav');
-    let currentSlide = 0;
-    let autoScroll = true;
-    let scrollTimer = null;
+    const carousel = document.getElementById('carousel');
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
 
-    // Create nav dots
-    sections.forEach((_, i) => {
-      const dot = document.createElement('div');
-      dot.classList.add('dot');
-      if (i === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => {
-        autoScroll = false;
-        scrollToSlide(i);
-      });
-      dotNav.appendChild(dot);
-    });
+    function moveSlide(direction) {
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = slides.length - 1;
+      if (currentIndex >= slides.length) currentIndex = 0;
+      carousel.style.transform = `translateX(-${currentIndex * 100}vw)`;
+    }
 
-    const dots = document.querySelectorAll('.dot');
-
-    // Slide navigation
-    const scrollToSlide = (i) => {
-      currentSlide = i;
-      sections[i].scrollIntoView({ behavior: 'smooth' });
-      updateActiveDot(i);
-    };
-
-    const updateActiveDot = (i) => {
-      dots.forEach(dot => dot.classList.remove('active'));
-      if (dots[i]) dots[i].classList.add('active');
-    };
-
-    // Observe sections to update dots on manual scroll
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const index = Array.from(sections).indexOf(entry.target);
-          updateActiveDot(index);
-          currentSlide = index;
-        }
-      });
-    }, { threshold: 0.6 });
-
-    sections.forEach(section => observer.observe(section));
-
-    // Auto-scroll every 6 seconds
-    const startAutoScroll = () => {
-      scrollTimer = setInterval(() => {
-        if (!autoScroll) return;
-        currentSlide = (currentSlide + 1) % sections.length;
-        scrollToSlide(currentSlide);
-      }, 6000);
-    };
-
-    startAutoScroll();
+    // Auto-scroll every 7s
+    setInterval(() => moveSlide(1), 7000);
   </script>
 
 </body>
