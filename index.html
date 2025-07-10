@@ -5,24 +5,186 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Skyline Software Co.</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: sans-serif;
-      background: #f4f4f4;
-      padding: 3rem;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    header {
+      background: url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+      height: 100vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       text-align: center;
+      padding: 0 2rem;
     }
-    h1 {
-      color: #2c3e50;
+
+    header h1 {
+      font-size: 3rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.6);
     }
-    p {
-      color: #666;
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
       max-width: 600px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
       margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #111;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .contact p {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to Skyline Software Co.</h1>
-  <p>We're building innovative digital solutions. Stay tuned for our full launch.</p>
+
+  <header>
+    <h1>Skyline Software Co.</h1>
+    <p>Your Trusted Salesforce Partner for Implementation, Integration, and Innovation</p>
+  </header>
+
+  <section>
+    <h2>About Us</h2>
+    <p style="font-size: 1.1rem; line-height: 1.8; text-align: center;">
+      Skyline Software Co. is a newly formed consultancy — but our team brings years of real-world Salesforce experience across industries.
+      <br /><br />
+      We're a group of seasoned Salesforce developers and architects who came together to build something better: a nimble, expert-driven firm that focuses on practical, high-impact solutions.
+      <br /><br />
+      While our company may be new, our hands-on experience with Apex, Lightning, Experience Cloud, Field Service, and complex integrations runs deep. We’ve delivered scalable, secure, and user-friendly systems for startups, enterprises, and everything in between.
+      <br /><br />
+      We're transparent, fast-moving, and committed to doing great work without the red tape.
+    </p>
+  </section>
+
+  <section>
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Salesforce Implementation</h3>
+        <p>Full-cycle setup tailored to your business needs — Sales, Service, Experience Cloud, and more.</p>
+      </div>
+      <div class="card">
+        <h3>Custom Development</h3>
+        <p>Advanced Apex, Lightning Web Components, Triggers, and Flows to automate your business processes.</p>
+      </div>
+      <div class="card">
+        <h3>Experience Cloud Portals</h3>
+        <p>Build branded partner, customer, or employee portals for self-service and collaboration.</p>
+      </div>
+      <div class="card">
+        <h3>Integrations</h3>
+        <p>REST, SOAP, Middleware (MuleSoft, Zapier, Workato) — we connect Salesforce with your ecosystem.</p>
+      </div>
+      <div class="card">
+        <h3>Field Service Lightning</h3>
+        <p>Enable mobile crews with FSL — schedule optimization, mobile workflows, and real-time service tracking.</p>
+      </div>
+      <div class="card">
+        <h3>Salesforce CPQ</h3>
+        <p>Accelerate complex quote-to-cash flows with CPQ configuration, automation, and training.</p>
+      </div>
+      <div class="card">
+        <h3>Marketing Automation</h3>
+        <p>Setup and customize Pardot, Marketing Cloud, and campaign workflows to drive engagement.</p>
+      </div>
+      <div class="card">
+        <h3>AI & Einstein Integration</h3>
+        <p>Use AI to summarize notes, prioritize leads, and provide intelligent recommendations inside Salesforce.</p>
+      </div>
+      <div class="card">
+        <h3>DevOps & CI/CD</h3>
+        <p>Modern release management using GitHub Actions, Bitbucket Pipelines, or Copado/SFDX CLI.</p>
+      </div>
+      <div class="card">
+        <h3>Data Migration & Cleanup</h3>
+        <p>Seamlessly migrate data from legacy CRMs, spreadsheets, or ERPs into Salesforce with integrity.</p>
+      </div>
+      <div class="card">
+        <h3>Security & Compliance</h3>
+        <p>Set up profiles, permission sets, audit logs, and enforce HIPAA/GDPR-aligned data protection policies.</p>
+      </div>
+      <div class="card">
+        <h3>Managed Services & Support</h3>
+        <p>Ongoing admin/dev support with ticketing, enhancements, documentation, and scaling assistance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>Reach out at <strong>admin@skylinesoftware.co</strong> — Let’s talk about how Salesforce can transform your business.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Skyline Software Co. All rights reserved.
+  </footer>
+
 </body>
 </html>
