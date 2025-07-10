@@ -39,19 +39,47 @@
       display: block; padding: 10px 15px; color: #333;
     }
     .dropdown:hover .dropdown-content { display: block; }
+
     .carousel-wrapper {
       margin-top: 70px; position: relative; overflow: hidden;
     }
     .carousel {
       display: flex; transition: transform 0.5s ease-in-out; width: max-content;
     }
+
     .slide {
-      flex: 0 0 100vw; height: calc(100vh - 70px);
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; text-align: center;
-      padding: 2rem; box-sizing: border-box;
+      flex: 0 0 100vw;
+      height: calc(100vh - 70px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+      box-sizing: border-box;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.03);
     }
-    .slide:nth-child(even) { background: #f7f9fb; }
+
+    .slide::before {
+      content: '';
+      background: url('logo.png') center center no-repeat;
+      background-size: 60%;
+      opacity: 0.05;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+    }
+
+    .slide > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .slide:nth-child(even) {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+
     h2 { color: #0070f3; font-size: 2rem; margin-bottom: 1rem; }
     p {
       max-width: 700px; font-size: 1.1rem; color: #444;
@@ -174,8 +202,7 @@
     }
     setInterval(() => moveSlide(1), 7000);
 
-    // clickable nav links scroll to slide
-    document.querySelectorAll('a[href^=\"#\"]').forEach(link => {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', (e) => {
         const id = link.getAttribute('href').substring(1);
         const targetSlide = document.getElementById(id);
