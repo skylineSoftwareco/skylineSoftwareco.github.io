@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Skyline Software Co. | Salesforce Experts</title>
+  <title>Skyline Software Co. | Salesforce Consulting</title>
   <style>
     body {
       margin: 0;
@@ -12,26 +12,62 @@
       overflow-x: hidden;
     }
 
-    /* Header */
     header {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
+      right: 0;
       background: white;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      z-index: 100;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 10px 30px;
+      z-index: 1000;
     }
 
     .logo img {
       height: 40px;
     }
 
-    /* Carousel Wrapper */
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      min-width: 160px;
+      z-index: 1001;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      color: #333;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
     .carousel-wrapper {
       margin-top: 70px;
       position: relative;
@@ -67,12 +103,22 @@
     }
 
     p {
-      max-width: 600px;
+      max-width: 700px;
       font-size: 1.1rem;
       color: #444;
     }
 
-    /* Arrows */
+    ul {
+      list-style: none;
+      padding-left: 0;
+      text-align: left;
+    }
+
+    ul li {
+      padding: 5px 0;
+      font-size: 1rem;
+    }
+
     .arrow {
       position: absolute;
       top: 50%;
@@ -87,15 +133,9 @@
       border-radius: 6px;
     }
 
-    .arrow.left {
-      left: 10px;
-    }
+    .arrow.left { left: 10px; }
+    .arrow.right { right: 10px; }
 
-    .arrow.right {
-      right: 10px;
-    }
-
-    /* Footer */
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -105,28 +145,42 @@
     }
 
     @media (max-width: 768px) {
-      h2 {
-        font-size: 1.6rem;
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       .arrow {
         font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <div class="logo">
       <img src="logo.png" alt="Skyline Software Co." />
     </div>
-    <div><strong>Salesforce Consulting Experts</strong></div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <div class="dropdown">
+        <a href="#">Case Studies ▾</a>
+        <div class="dropdown-content">
+          <a href="#construction">Construction</a>
+          <a href="#aba">ABA</a>
+        </div>
+      </div>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <!-- Carousel -->
-  <div class="carousel-wrapper">
+  <div class="carousel-wrapper" id="services">
     <button class="arrow left" onclick="moveSlide(-1)">‹</button>
     <div class="carousel" id="carousel">
       <div class="slide"><h2>Skyline Software Co.</h2><p>Enterprise-grade Salesforce Consulting — Implementation, Development, and Support from a nimble, experienced team.</p></div>
@@ -142,30 +196,63 @@
       <div class="slide"><h2>Data Migration</h2><p>Move your legacy data to Salesforce with clean mapping, validation, and audit support.</p></div>
       <div class="slide"><h2>Security & Compliance</h2><p>Ensure GDPR/HIPAA compliance, field-level security, 2FA, and audit-ready policies.</p></div>
       <div class="slide"><h2>Ongoing Support</h2><p>Admin, enhancement, and architectural support packages tailored to your growth.</p></div>
-      <div class="slide"><h2>Contact Us</h2><p>📧 <strong>admin@skylinesoftware.co</strong><br>Let’s build something powerful together.</p></div>
+
+      <div class="slide" id="construction">
+        <h2>Case Study: Construction Ops Automation</h2>
+        <p>A large-scale construction firm servicing 1,000+ field jobs per week needed to eliminate paper-based processes and unify scheduling, payroll, and invoicing.</p>
+        <p><strong>What we delivered:</strong></p>
+        <ul>
+          <li>📋 Job creation and crew scheduling workflow</li>
+          <li>🛠️ Digital Work Ticket (Daily Report) submission with mobile-first UI</li>
+          <li>🕒 Crew time tracking with auto-calculated billable hours</li>
+          <li>🚚 Equipment rental, movement tracking, and check-in/out process</li>
+          <li>📤 Driver portal to manage delivery tickets in real time</li>
+          <li>🧾 Auto-generated invoices with audit trail of approvals</li>
+          <li>🌐 Customer portal for dispute resolution and job history access</li>
+          <li>🧠 OpenAI-based job note summarization (Spanglish to professional English)</li>
+        </ul>
+      </div>
+
+      <div class="slide" id="aba">
+        <h2>Case Study: ABA & Therapy Management</h2>
+        <p>An ABA therapy network needed an end-to-end platform to manage therapy sessions, billing, compliance, and therapist performance.</p>
+        <p><strong>What we delivered:</strong></p>
+        <ul>
+          <li>📆 Smart Scheduler for multi-location therapist sessions</li>
+          <li>📱 Mobile-friendly Therapist Portal with session check-in/out</li>
+          <li>📝 Session note entry with dynamic form rules (RBT, BCBA, Parent)</li>
+          <li>📊 Real-time progress tracking and behavior data logging</li>
+          <li>🧾 Superbills auto-generated per payer rules</li>
+          <li>✅ Compliance engine for Medicaid, Tricare, and commercial payers</li>
+          <li>💬 AI summaries of long session notes for quality assurance</li>
+          <li>🔒 Role-based security, audit trails, and HIPAA alignment</li>
+        </ul>
+      </div>
+
+      <div class="slide" id="contact">
+        <h2>Contact Us</h2>
+        <p>📧 <strong>admin@skylinesoftware.co</strong><br>Let’s explore how Salesforce can drive your business forward.</p>
+      </div>
     </div>
     <button class="arrow right" onclick="moveSlide(1)">›</button>
   </div>
 
-  <!-- Footer -->
   <footer>
-    &copy; 2025 Skyline Software Co. | All rights reserved
+    &copy; 2025 Skyline Software Co. | Salesforce Consulting Experts
   </footer>
 
-  <!-- Script -->
   <script>
     const carousel = document.getElementById('carousel');
     const slides = document.querySelectorAll('.slide');
     let currentIndex = 0;
 
-    function moveSlide(direction) {
-      currentIndex += direction;
+    function moveSlide(dir) {
+      currentIndex += dir;
       if (currentIndex < 0) currentIndex = slides.length - 1;
       if (currentIndex >= slides.length) currentIndex = 0;
       carousel.style.transform = `translateX(-${currentIndex * 100}vw)`;
     }
 
-    // Auto-scroll every 7s
     setInterval(() => moveSlide(1), 7000);
   </script>
 
