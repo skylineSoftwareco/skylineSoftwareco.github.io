@@ -11,12 +11,9 @@
       background: #fdfdfd;
       overflow-x: hidden;
     }
-
     header {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       background: white;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       display: flex;
@@ -25,138 +22,62 @@
       padding: 10px 30px;
       z-index: 1000;
     }
-
-    .logo img {
-      height: 40px;
-    }
-
+    .logo img { height: 40px; }
     nav {
-      display: flex;
-      gap: 20px;
-      align-items: center;
+      display: flex; gap: 20px; align-items: center;
     }
-
     nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      position: relative;
+      text-decoration: none; color: #333; font-weight: 500; position: relative;
     }
-
-    .dropdown {
-      position: relative;
-    }
-
+    .dropdown { position: relative; }
     .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 30px;
-      left: 0;
-      background-color: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      min-width: 160px;
-      z-index: 1001;
+      display: none; position: absolute; top: 30px; left: 0;
+      background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      min-width: 160px; z-index: 1001;
     }
-
     .dropdown-content a {
-      display: block;
-      padding: 10px 15px;
-      color: #333;
+      display: block; padding: 10px 15px; color: #333;
     }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
+    .dropdown:hover .dropdown-content { display: block; }
     .carousel-wrapper {
-      margin-top: 70px;
-      position: relative;
-      overflow: hidden;
+      margin-top: 70px; position: relative; overflow: hidden;
     }
-
     .carousel {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-      width: max-content;
+      display: flex; transition: transform 0.5s ease-in-out; width: max-content;
     }
-
     .slide {
-      flex: 0 0 100vw;
-      height: calc(100vh - 70px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      padding: 2rem;
-      box-sizing: border-box;
+      flex: 0 0 100vw; height: calc(100vh - 70px);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; text-align: center;
+      padding: 2rem; box-sizing: border-box;
     }
-
-    .slide:nth-child(even) {
-      background: #f7f9fb;
-    }
-
-    h2 {
-      color: #0070f3;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
+    .slide:nth-child(even) { background: #f7f9fb; }
+    h2 { color: #0070f3; font-size: 2rem; margin-bottom: 1rem; }
     p {
-      max-width: 700px;
-      font-size: 1.1rem;
-      color: #444;
+      max-width: 700px; font-size: 1.1rem; color: #444;
     }
-
     ul {
-      list-style: none;
-      padding-left: 0;
-      text-align: left;
+      list-style: none; padding-left: 0; text-align: left;
+      max-width: 700px; margin: auto; color: #444; font-size: 1rem;
     }
-
-    ul li {
-      padding: 5px 0;
-      font-size: 1rem;
-    }
-
+    ul li { padding: 5px 0; }
     .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      color: #0070f3;
-      background: rgba(255,255,255,0.8);
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      z-index: 10;
+      position: absolute; top: 50%; transform: translateY(-50%);
+      font-size: 2rem; color: #0070f3;
+      background: rgba(255,255,255,0.8); border: none;
+      padding: 0.5rem 1rem; cursor: pointer; z-index: 10;
       border-radius: 6px;
     }
-
     .arrow.left { left: 10px; }
     .arrow.right { right: 10px; }
-
     footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #111;
-      color: #ccc;
-      font-size: 0.9rem;
+      text-align: center; padding: 2rem 1rem;
+      background: #111; color: #ccc; font-size: 0.9rem;
     }
-
     @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .arrow {
-        font-size: 1.5rem;
-      }
-
-      h2 {
-        font-size: 1.6rem;
-      }
+      nav { flex-direction: column; align-items: flex-start; }
+      .arrow { font-size: 1.5rem; }
+      h2 { font-size: 1.6rem; }
     }
   </style>
 </head>
@@ -186,52 +107,52 @@
       <div class="slide"><h2>Skyline Software Co.</h2><p>Enterprise-grade Salesforce Consulting — Implementation, Development, and Support from a nimble, experienced team.</p></div>
       <div class="slide"><h2>Salesforce Implementation</h2><p>End-to-end setup for Sales Cloud, Service Cloud, Experience Cloud, and more — tailored to your workflows.</p></div>
       <div class="slide"><h2>Custom Development</h2><p>Apex, Lightning Web Components, Flows, and scalable automation built for performance and compliance.</p></div>
-      <div class="slide"><h2>Experience Cloud Portals</h2><p>Build branded, self-service portals for customers, partners, and employees — fully integrated with Salesforce.</p></div>
-      <div class="slide"><h2>Integrations</h2><p>REST/SOAP APIs, middleware like MuleSoft or Zapier — connect Salesforce with your ecosystem.</p></div>
-      <div class="slide"><h2>Field Service Lightning</h2><p>Deploy mobile-first field technician solutions with scheduling, routing, and job tracking.</p></div>
-      <div class="slide"><h2>Salesforce CPQ</h2><p>Streamline your quote-to-cash cycle with smart configuration, pricing, and approvals.</p></div>
-      <div class="slide"><h2>Marketing Automation</h2><p>Automate campaigns with Pardot and Marketing Cloud, optimize lead journeys and engagement.</p></div>
-      <div class="slide"><h2>AI & Einstein</h2><p>Use AI to summarize notes, predict outcomes, and assist your teams with intelligent recommendations.</p></div>
-      <div class="slide"><h2>DevOps & CI/CD</h2><p>Use GitHub Actions and SFDX for version control, pipelines, and deployment automation.</p></div>
-      <div class="slide"><h2>Data Migration</h2><p>Move your legacy data to Salesforce with clean mapping, validation, and audit support.</p></div>
-      <div class="slide"><h2>Security & Compliance</h2><p>Ensure GDPR/HIPAA compliance, field-level security, 2FA, and audit-ready policies.</p></div>
-      <div class="slide"><h2>Ongoing Support</h2><p>Admin, enhancement, and architectural support packages tailored to your growth.</p></div>
+      <div class="slide"><h2>Experience Cloud Portals</h2><p>Branded portals for customers, partners, and employees — integrated and secure.</p></div>
+      <div class="slide"><h2>Integrations</h2><p>REST/SOAP APIs, middleware like MuleSoft or Zapier — seamless system connections.</p></div>
+      <div class="slide"><h2>Field Service Lightning</h2><p>Mobile-first field tech support with scheduling, routing, and job tracking.</p></div>
+      <div class="slide"><h2>Salesforce CPQ</h2><p>Configure, price, and quote automation for complex products and services.</p></div>
+      <div class="slide"><h2>Marketing Automation</h2><p>Campaign journeys, lead scoring, Pardot/Marketing Cloud setup.</p></div>
+      <div class="slide"><h2>AI & Einstein</h2><p>Integrate AI to auto-summarize, classify, and recommend actions in real time.</p></div>
+      <div class="slide"><h2>DevOps & CI/CD</h2><p>Source control, sandbox pipelines, SFDX & GitHub Actions deployment.</p></div>
+      <div class="slide"><h2>Data Migration</h2><p>Clean, validated imports from legacy systems or flat files.</p></div>
+      <div class="slide"><h2>Security & Compliance</h2><p>Implement audit logs, field-level security, and HIPAA/GDPR safeguards.</p></div>
+      <div class="slide"><h2>Ongoing Support</h2><p>Retainer packages for admin tasks, minor dev, training, and monitoring.</p></div>
 
       <div class="slide" id="construction">
         <h2>Case Study: Construction Ops Automation</h2>
-        <p>A large-scale construction firm servicing 1,000+ field jobs per week needed to eliminate paper-based processes and unify scheduling, payroll, and invoicing.</p>
+        <p>A construction firm servicing 1,000+ field jobs weekly needed real-time ops and invoicing.</p>
         <p><strong>What we delivered:</strong></p>
         <ul>
-          <li>📋 Job creation and crew scheduling workflow</li>
-          <li>🛠️ Digital Work Ticket (Daily Report) submission with mobile-first UI</li>
-          <li>🕒 Crew time tracking with auto-calculated billable hours</li>
-          <li>🚚 Equipment rental, movement tracking, and check-in/out process</li>
-          <li>📤 Driver portal to manage delivery tickets in real time</li>
-          <li>🧾 Auto-generated invoices with audit trail of approvals</li>
-          <li>🌐 Customer portal for dispute resolution and job history access</li>
-          <li>🧠 OpenAI-based job note summarization (Spanglish to professional English)</li>
+          <li>📋 Job creation + crew scheduling</li>
+          <li>🛠️ Work Ticket (Daily Report) mobile form</li>
+          <li>🕒 Crew time tracking & auto payroll</li>
+          <li>🚚 Equipment rental + check-in/out</li>
+          <li>📤 Driver portal for ticket logging</li>
+          <li>🧾 Auto invoice + audit trail</li>
+          <li>🌐 Client portal for history + disputes</li>
+          <li>🧠 AI summary for Spanglish job notes</li>
         </ul>
       </div>
 
       <div class="slide" id="aba">
         <h2>Case Study: ABA & Therapy Management</h2>
-        <p>An ABA therapy network needed an end-to-end platform to manage therapy sessions, billing, compliance, and therapist performance.</p>
+        <p>An ABA therapy network needed an end-to-end platform for operations and compliance.</p>
         <p><strong>What we delivered:</strong></p>
         <ul>
-          <li>📆 Smart Scheduler for multi-location therapist sessions</li>
-          <li>📱 Mobile-friendly Therapist Portal with session check-in/out</li>
-          <li>📝 Session note entry with dynamic form rules (RBT, BCBA, Parent)</li>
-          <li>📊 Real-time progress tracking and behavior data logging</li>
-          <li>🧾 Superbills auto-generated per payer rules</li>
-          <li>✅ Compliance engine for Medicaid, Tricare, and commercial payers</li>
-          <li>💬 AI summaries of long session notes for quality assurance</li>
-          <li>🔒 Role-based security, audit trails, and HIPAA alignment</li>
+          <li>📆 Smart Scheduler for sessions</li>
+          <li>📱 Therapist mobile check-in/check-out</li>
+          <li>📝 Dynamic session notes (RBT, BCBA)</li>
+          <li>📊 Behavior tracking + real-time logging</li>
+          <li>🧾 Automated superbills (payer rules)</li>
+          <li>✅ Medicaid/Tricare compliance logic</li>
+          <li>💬 AI-generated QA summaries</li>
+          <li>🔒 Role-based access, audit logs, HIPAA-ready</li>
         </ul>
       </div>
 
       <div class="slide" id="contact">
         <h2>Contact Us</h2>
-        <p>📧 <strong>admin@skylinesoftware.co</strong><br>Let’s explore how Salesforce can drive your business forward.</p>
+        <p>📧 <strong>admin@skylinesoftware.co</strong><br>Let’s build your Salesforce foundation.</p>
       </div>
     </div>
     <button class="arrow right" onclick="moveSlide(1)">›</button>
@@ -245,15 +166,29 @@
     const carousel = document.getElementById('carousel');
     const slides = document.querySelectorAll('.slide');
     let currentIndex = 0;
-
     function moveSlide(dir) {
       currentIndex += dir;
       if (currentIndex < 0) currentIndex = slides.length - 1;
       if (currentIndex >= slides.length) currentIndex = 0;
       carousel.style.transform = `translateX(-${currentIndex * 100}vw)`;
     }
-
     setInterval(() => moveSlide(1), 7000);
+
+    // clickable nav links scroll to slide
+    document.querySelectorAll('a[href^=\"#\"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const id = link.getAttribute('href').substring(1);
+        const targetSlide = document.getElementById(id);
+        if (targetSlide) {
+          e.preventDefault();
+          const index = Array.from(slides).indexOf(targetSlide);
+          if (index >= 0) {
+            currentIndex = index;
+            carousel.style.transform = `translateX(-${currentIndex * 100}vw)`;
+          }
+        }
+      });
+    });
   </script>
 
 </body>
